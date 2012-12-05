@@ -11,9 +11,9 @@ AmazonReport.logger = Logger.new(STDERR)
 f = AmazonReport::Fetcher.new(email, password)
 parser = AmazonReport::Parser.new
 
-data = f.fetch_orders_xml("alfalfalafa-22", from, to)
+data = f.fetch_orders_xml("oh-my-zsh-22", from, to)
 p parser.parse_orders_xml(data)
 
-data = f.fetch_sales_xml("alfalfalafa-22", from, to)
+data = f.fetch_sales_xml("oh-my-zsh-22", from, to)
 p parser.parse_sales_xml(data)
 
