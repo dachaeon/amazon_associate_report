@@ -30,7 +30,7 @@ module AmazonAssociateReport
 
     def fetch_xml(tracking_code, from, to, options={})
       go_top
-      choose_tracking(tracking_code)
+      #choose_tracking(tracking_code)
       report(from, to, options)
     end
 
