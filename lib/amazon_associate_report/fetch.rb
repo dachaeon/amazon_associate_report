@@ -11,8 +11,8 @@ module AmazonAssociateReport
   class LoginError < StandardError; end
 
   class Fetcher
-    LOGIN_URL = 'https://affiliate.amazon.co.jp/gp/associates/login/login.html'
-    TOP_URL = 'https://affiliate.amazon.co.jp/gp/associates/network/reports/main.html'
+    LOGIN_URL = 'https://affiliate-program.amazon.com/gp/associates/login/login.html'
+    TOP_URL = 'https://affiliate-program.amazon.com/gp/associates/network/reports/main.html'
     BLACK_CURT = "BLACK-CURT"
     class UnknownTrackingId < StandardError; end
 
