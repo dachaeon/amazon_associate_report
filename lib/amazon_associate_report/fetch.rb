@@ -62,20 +62,20 @@ module AmazonAssociateReport
     def choose_tracking(tracking_id)
       @tracking_id = tracking_id
       @agent.page.link_with(:href => "https://affiliate-program.amazon.com/gp/associates/network/reports/report.html?ie=UTF8&reportType=earningsReport").click()
-      @agent.page.form_with(:name => 'idbox_tracking_id_form'){ |f|
-        f.field_with(:name => 'idbox_tracking_id').value = tracking_id
-        f.submit()
-      }
+      #@agent.page.form_with(:name => 'idbox_tracking_id_form'){ |f|
+      #  f.field_with(:name => 'idbox_tracking_id').value = tracking_id
+      #  f.submit()
+      #}
 
-      registered_tracking_ids = begin
-                                  Nokogiri::HTML(@agent.page.body).search("select[name = 'idbox_tracking_id']").first.search("option").map(&:text)
-                                rescue
-                                  []
-                                end
+      #registered_tracking_ids = begin
+      #                            Nokogiri::HTML(@agent.page.body).search("select[name = 'idbox_tracking_id']").first.search("option").map(&:text)
+      #                          rescue
+      #                            []
+      #                          end
 
-      unless registered_tracking_ids.include? tracking_id
-        raise UnknownTrackingId
-      end
+      #unless registered_tracking_ids.include? tracking_id
+      #  raise UnknownTrackingId
+      #end
     end
 
     # :period_type => :exact
