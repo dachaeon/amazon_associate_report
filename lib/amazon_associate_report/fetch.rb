@@ -48,7 +48,7 @@ module AmazonAssociateReport
         raise ArgumentError.new
       end
       @agent.get(url)
-      @agent.page.form_with(:name => 'sign-in') {|f|
+      @agent.page.form_with(:name => 'sign_in') {|f|
         f.field_with(:name => 'username').value = email
         f.field_with(:name => 'password').value = password
         f.click_button
