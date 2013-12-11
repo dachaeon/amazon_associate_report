@@ -49,7 +49,7 @@ module AmazonAssociateReport
       end
       @agent.get(url)
       @agent.page.form_with(:name => 'sign-in') {|f|
-        f.field_with(:name => 'email').value = email
+        f.field_with(:name => 'username').value = email
         f.field_with(:name => 'password').value = password
         f.click_button
       }
