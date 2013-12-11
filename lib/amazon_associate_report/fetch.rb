@@ -61,7 +61,7 @@ module AmazonAssociateReport
 
     def choose_tracking(tracking_id)
       @tracking_id = tracking_id
-      @agent.page.link_with(:href => /trendsReport/).click()
+      @agent.page.link_with(:href => "https://affiliate-program.amazon.com/gp/associates/network/reports/report.html?ie=UTF8&reportType=earningsReport").click()
       @agent.page.form_with(:name => 'idbox_tracking_id_form'){ |f|
         f.field_with(:name => 'idbox_tracking_id').value = tracking_id
         f.submit()
